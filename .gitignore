@@ -1,0 +1,43 @@
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Node modules
+node_modules/
+travel-app/node_modules/
+
+# Next.js build artifacts
+.next/
+out/
+travel-app/.next/
+travel-app/out/
+
+# Runtime and coverage
+coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# SQLite generated files
+*.db
+*.db-journal
+travel-app/db/travel.db
+
+# Vercel
+.vercel/
+travel-app/.vercel/
