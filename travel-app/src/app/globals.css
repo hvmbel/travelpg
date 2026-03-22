@@ -86,4 +86,12 @@
   body {
     @apply bg-surface-secondary text-text-primary font-sans;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
 }

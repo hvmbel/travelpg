@@ -1,8 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import Database from "better-sqlite3";
 
-const dbDirectory = path.join(process.cwd(), "db");
+const scriptDir = path.dirname(fileURLToPath(import.meta.url));
+const projectRoot = path.resolve(scriptDir, "..");
+const dbDirectory = path.join(projectRoot, "db");
 const dbPath = path.join(dbDirectory, "travel.db");
 const schemaPath = path.join(dbDirectory, "schema.sql");
 const seedPath = path.join(dbDirectory, "seed.sql");

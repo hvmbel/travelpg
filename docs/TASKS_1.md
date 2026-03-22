@@ -127,11 +127,11 @@ Build the horizontal scrollable promo banner area at top of home screen.
 - Data comes from `getBanners()` query via server component prop
 
 **Definition of Done:**
-- [ ] 3 banners render with correct gradient backgrounds
-- [ ] Banners scroll horizontally with snap behavior
-- [ ] Dot indicators reflect which banner is visible
-- [ ] Text is white, bold, readable on gradient backgrounds
-- [ ] Matches the wireframe screenshot layout
+- [x] 3 banners render with correct gradient backgrounds
+- [x] Banners scroll horizontally with snap behavior
+- [x] Dot indicators reflect which banner is visible
+- [x] Text is white, bold, readable on gradient backgrounds
+- [x] Matches the wireframe screenshot layout
 
 ---
 
@@ -150,11 +150,11 @@ Show the user's active eSIM with traffic progress.
 - Data from `getUserEsims(1)` joined with `getEsimPlan()`
 
 **Definition of Done:**
-- [ ] Card displays Turkey eSIM data correctly
-- [ ] Progress bar shows ~42% filled (2.1 of 5 GB)
-- [ ] "Пополнить" button is styled in brand blue
-- [ ] Card has white background, rounded corners, subtle shadow
-- [ ] Matches wireframe layout closely
+- [x] Card displays Turkey eSIM data correctly
+- [x] Progress bar shows ~42% filled (2.1 of 5 GB)
+- [x] "Пополнить" button is styled in brand blue
+- [x] Card has white background, rounded corners, subtle shadow
+- [x] Matches wireframe layout closely
 
 ---
 
@@ -170,10 +170,10 @@ Display the user's card balance.
 - Data from `getUserCard(1)`
 
 **Definition of Done:**
-- [ ] Shows "*1234" and "VISA"
-- [ ] Balance shows "$39.23" prominently
-- [ ] Light blue background distinguishes it from eSIM card
-- [ ] "Пополнить" button present and styled
+- [x] Shows "*1234" and "VISA"
+- [x] Balance shows "$39.23" prominently
+- [x] Light blue background distinguishes it from eSIM card
+- [x] "Пополнить" button present and styled
 
 ---
 
@@ -187,10 +187,10 @@ Show upcoming subscription renewal.
 - Data from `getUserSubscriptions(1)` joined with `store_products`
 
 **Definition of Done:**
-- [ ] Shows ChatGPT renewal info
-- [ ] Date and price displayed correctly
-- [ ] Icon/avatar for the service is present
-- [ ] Clean list-item styling
+- [x] Shows ChatGPT renewal info
+- [x] Date and price displayed correctly
+- [x] Icon/avatar for the service is present
+- [x] Clean list-item styling
 
 ---
 
@@ -205,9 +205,9 @@ Quick-access service icons.
 - Data from `getUserFavorites(1)` joined with `store_products`
 
 **Definition of Done:**
-- [ ] 4 favorites shown: ChatGPT, Steam, Miro, Figma
-- [ ] Round icon circles with labels
-- [ ] Horizontal layout, evenly spaced
+- [x] 4 favorites shown: ChatGPT, Steam, Miro, Figma
+- [x] Round icon circles with labels
+- [x] Horizontal layout, evenly spaced
 
 ---
 
@@ -221,10 +221,10 @@ Wire all home components together in `app/page.tsx`.
 - Add safe area padding at top for header
 
 **Definition of Done:**
-- [ ] Home page shows: banners → eSIM card → virtual card → subscriptions → favorites
-- [ ] All data comes from SQLite (no hardcoded values in components)
-- [ ] Scrolls naturally on mobile viewport
-- [ ] Visual hierarchy matches the wireframe screenshot
+- [x] Home page shows: banners → eSIM card → virtual card → subscriptions → favorites
+- [x] All data comes from SQLite (no hardcoded values in components)
+- [x] Scrolls naturally on mobile viewport
+- [x] Visual hierarchy matches the wireframe screenshot
 
 ---
 
@@ -243,10 +243,10 @@ The eSIM tab shows active eSIM management and country browsing.
 - Create `components/esim/CountryGrid.tsx` and `components/esim/TrafficMonitor.tsx`
 
 **Definition of Done:**
-- [ ] Active eSIM traffic shown at top with detailed stats
-- [ ] Country grid shows 15+ countries with flags and prices
-- [ ] Countries clickable (navigate to `/esim/[countryCode]`)
-- [ ] Layout is a 2-column grid for countries
+- [x] Active eSIM traffic shown at top with detailed stats
+- [x] Country grid shows 15+ countries with flags and prices
+- [x] Countries clickable (navigate to `/esim/[countryCode]`)
+- [x] Layout is a 2-column grid for countries
 
 ---
 
@@ -263,11 +263,11 @@ Select a data package for a specific country.
 - Create `components/esim/PackagePicker.tsx`
 
 **Definition of Done:**
-- [ ] Navigating to `/esim/TR` shows Turkey packages
-- [ ] Multiple packages displayed as selectable cards
-- [ ] One package visually highlighted as recommended
-- [ ] "Купить" button present (can show alert on click)
-- [ ] Back navigation works
+- [x] Navigating to `/esim/TR` shows Turkey packages
+- [x] Multiple packages displayed as selectable cards
+- [x] One package visually highlighted as recommended
+- [x] "Купить" button present (can show alert on click)
+- [x] Back navigation works
 
 ---
 
@@ -285,10 +285,10 @@ Full card view with balance and details.
 - Create `components/card/CardVisual.tsx`, `components/card/BalanceDisplay.tsx`
 
 **Definition of Done:**
-- [ ] Card renders with visual representation (gradient card shape)
-- [ ] Balance prominently displayed
-- [ ] Action buttons present and styled
-- [ ] Card features listed below
+- [x] Card renders with visual representation (gradient card shape)
+- [x] Balance prominently displayed
+- [x] Action buttons present and styled
+- [x] Card features listed below
 
 ---
 
@@ -309,9 +309,9 @@ Placeholder for travel services (not fully featured in MLP).
 - At least Airbnb tile can link out or show info modal
 
 **Definition of Done:**
-- [ ] 4 service tiles displayed in 2x2 grid
-- [ ] Each has icon, label, and status (active or "Скоро")
-- [ ] Clean visual layout with consistent card styling
+- [x] 4 service tiles displayed in 2x2 grid
+- [x] Each has icon, label, and status (active or "Скоро")
+- [x] Clean visual layout with consistent card styling
 
 ---
 
@@ -329,10 +329,10 @@ Browse digital products by category.
 - Category filtering can be client-side (useState) since data is passed as props
 
 **Definition of Done:**
-- [ ] 8+ products displayed in grid
-- [ ] Category tabs filter the list
-- [ ] Each product has icon, name, price
-- [ ] Cards are visually consistent with app design language
+- [x] 8+ products displayed in grid
+- [x] Category tabs filter the list
+- [x] Each product has icon, name, price
+- [x] Cards are visually consistent with app design language
 
 ---
 
@@ -366,11 +366,11 @@ Make the app deployable with a single command.
 - Test: `npm run build` succeeds locally
 
 **Definition of Done:**
-- [ ] `npm run build` completes without errors
-- [ ] Built app serves correctly from `npm start`
-- [ ] `vercel.json` present and configured
-- [ ] `README.md` has clear setup instructions
-- [ ] `.gitignore` includes `db/travel.db` and standard Next.js ignores
+- [x] `npm run build` completes without errors
+- [x] Built app serves correctly from `npm start`
+- [x] `vercel.json` present and configured
+- [x] `README.md` has clear setup instructions
+- [x] `.gitignore` includes `db/travel.db` and standard Next.js ignores
 
 ---
 
@@ -390,11 +390,11 @@ Final visual refinements across all screens.
 - Test on mobile viewport (375px and 430px widths)
 
 **Definition of Done:**
-- [ ] App looks polished at 375px and 430px widths
-- [ ] No visual glitches or overflow issues
-- [ ] Cards have consistent shadows and rounded corners
-- [ ] Interactive elements have hover/active states
-- [ ] Tab bar doesn't overlap content
+- [x] App looks polished at 375px and 430px widths
+- [x] No visual glitches or overflow issues
+- [x] Cards have consistent shadows and rounded corners
+- [x] Interactive elements have hover/active states
+- [x] Tab bar doesn't overlap content
 
 ---
 
