@@ -1,5 +1,7 @@
 export type EsimStatus = "active" | "expired";
 export type StoreCategory = "subscriptions" | "gaming" | "vpn" | "ai";
+export type CardStatus = "active" | "frozen";
+export type CardTransactionDirection = "in" | "out";
 
 export interface User {
   id: number;
@@ -35,6 +37,16 @@ export interface UserCard {
   brand: string;
   balance_usd: number;
   currency: string;
+  card_status: CardStatus;
+}
+
+export interface CardTransaction {
+  id: number;
+  user_card_id: number;
+  title: string;
+  amount_usd: number;
+  direction: CardTransactionDirection;
+  occurred_at: string;
 }
 
 export interface StoreProduct {

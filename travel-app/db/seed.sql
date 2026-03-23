@@ -1,5 +1,6 @@
 DELETE FROM user_favorites;
 DELETE FROM user_subscriptions;
+DELETE FROM card_transactions;
 DELETE FROM user_cards;
 DELETE FROM user_esims;
 DELETE FROM banners;
@@ -32,8 +33,16 @@ INSERT INTO esim_plans (id, country, country_code, region, data_gb, duration_day
 INSERT INTO user_esims (id, user_id, plan_id, used_gb, activated_at, status)
 VALUES (1, 1, 1, 2.1, '2026-03-01', 'active');
 
-INSERT INTO user_cards (id, user_id, last_four, brand, balance_usd, currency)
-VALUES (1, 1, '1234', 'VISA', 39.23, 'USD');
+INSERT INTO user_cards (id, user_id, last_four, brand, balance_usd, currency, card_status)
+VALUES (1, 1, '1234', 'VISA', 39.23, 'USD', 'active');
+
+INSERT INTO card_transactions (id, user_card_id, title, amount_usd, direction, occurred_at) VALUES
+(1, 1, 'Booking.com', 12.40, 'out', '2026-03-22T18:20:00Z'),
+(2, 1, 'Пополнение карты', 50.00, 'in', '2026-03-21T09:15:00Z'),
+(3, 1, 'Apple Services', 1.99, 'out', '2026-03-20T07:40:00Z'),
+(4, 1, 'Uber', 8.70, 'out', '2026-03-19T21:10:00Z'),
+(5, 1, 'Steam Wallet', 20.00, 'out', '2026-03-18T14:05:00Z'),
+(6, 1, 'Возврат Airbnb', 15.00, 'in', '2026-03-17T12:30:00Z');
 
 INSERT INTO store_products (id, name, category, icon_url, price_usd, description) VALUES
 (1, 'ChatGPT Plus', 'ai', '/icons/chatgpt.png', 20.00, 'Доступ к GPT-5 и расширенным функциям'),

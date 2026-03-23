@@ -31,7 +31,17 @@ CREATE TABLE IF NOT EXISTS user_cards (
   last_four TEXT NOT NULL,
   brand TEXT DEFAULT 'VISA',
   balance_usd REAL NOT NULL,
-  currency TEXT DEFAULT 'USD'
+  currency TEXT DEFAULT 'USD',
+  card_status TEXT DEFAULT 'active'
+);
+
+CREATE TABLE IF NOT EXISTS card_transactions (
+  id INTEGER PRIMARY KEY,
+  user_card_id INTEGER REFERENCES user_cards(id),
+  title TEXT NOT NULL,
+  amount_usd REAL NOT NULL,
+  direction TEXT NOT NULL,
+  occurred_at TEXT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS store_products (

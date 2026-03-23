@@ -3,6 +3,7 @@ import type { UserCard } from "@/lib/types";
 
 type BalanceDisplayProps = {
   card: UserCard;
+  isFrozen?: boolean;
 };
 
 function formatUsd(amount: number): string {
@@ -14,7 +15,7 @@ function formatUsd(amount: number): string {
   }).format(amount);
 }
 
-export function BalanceDisplay({ card }: BalanceDisplayProps) {
+export function BalanceDisplay({ card, isFrozen = false }: BalanceDisplayProps) {
   return (
     <section className="space-y-4 rounded-2xl bg-surface-primary p-4 shadow-sm" aria-label="Баланс карты">
       <div>
@@ -23,7 +24,9 @@ export function BalanceDisplay({ card }: BalanceDisplayProps) {
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <Button className="h-10 bg-brand-blue text-white hover:bg-brand-blue/90">Пополнить</Button>
+        <Button className="h-10 bg-brand-blue text-white hover:bg-brand-blue/90" disabled={isFrozen}>
+          Пополнить
+        </Button>
         <Button variant="outline" className="h-10">
           Реквизиты
         </Button>

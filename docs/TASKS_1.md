@@ -23,10 +23,10 @@ Create a new Next.js 14+ project with App Router and TypeScript.
 - Add shadcn components: `button`, `card`, `badge`, `progress`, `separator`
 
 **Definition of Done:**
-- [ ] `npm run dev` starts without errors
-- [ ] Tailwind works (test with a colored div)
-- [ ] shadcn/ui `<Button>` renders correctly
-- [ ] TypeScript compiles with no errors
+- [x] `npm run dev` starts without errors
+- [x] Tailwind works (test with a colored div)
+- [x] shadcn/ui `<Button>` renders correctly
+- [x] TypeScript compiles with no errors
 
 ---
 
@@ -42,8 +42,8 @@ Set up custom Tailwind colors and typography that match the Revolut-style aesthe
 - Set default border-radius to `12px` for cards
 
 **Definition of Done:**
-- [ ] Custom colors usable as `bg-brand-blue`, `text-text-primary`, etc.
-- [ ] Font stack renders clean system sans-serif on all platforms
+- [x] Custom colors usable as `bg-brand-blue`, `text-text-primary`, etc.
+- [x] Font stack renders clean system sans-serif on all platforms
 
 ---
 
@@ -72,11 +72,11 @@ Create the database layer with schema, seed data, and query functions.
 - Add `"seed"` script to `package.json`: `"tsx scripts/seed.ts"`
 
 **Definition of Done:**
-- [ ] `npm run seed` creates `db/travel.db` without errors
-- [ ] Each query function returns typed data
-- [ ] `getUser(1)` returns `{ id: 1, name: "Андрей", ... }`
-- [ ] `getUserEsims(1)` returns array with the Turkey eSIM
-- [ ] `getStoreProducts()` returns 8+ products
+- [x] `npm run seed` creates `db/travel.db` without errors
+- [x] Each query function returns typed data
+- [x] `getUser(1)` returns `{ id: 1, name: "Андрей", ... }`
+- [x] `getUserEsims(1)` returns array with the Turkey eSIM
+- [x] `getStoreProducts()` returns 8+ products
 
 ---
 
@@ -104,12 +104,12 @@ Create the app shell that wraps all pages: mobile container + bottom navigation.
 - Create placeholder `page.tsx` for each tab route (`/`, `/esim`, `/card`, `/trip`, `/store`) — just a heading with the tab name
 
 **Definition of Done:**
-- [ ] App renders as a phone-width column centered on desktop
-- [ ] Tab bar is visible and fixed at bottom on all routes
-- [ ] Clicking each tab navigates to its route
-- [ ] Active tab is highlighted in blue
-- [ ] Header shows "AN" avatar and bell icon
-- [ ] All 5 routes render their placeholder headings
+- [x] App renders as a phone-width column centered on desktop
+- [x] Tab bar is visible and fixed at bottom on all routes
+- [x] Clicking each tab navigates to its route
+- [x] Active tab is highlighted in blue
+- [x] Header shows "AN" avatar and bell icon
+- [x] All 5 routes render their placeholder headings
 
 ---
 
@@ -289,6 +289,74 @@ Full card view with balance and details.
 - [x] Balance prominently displayed
 - [x] Action buttons present and styled
 - [x] Card features listed below
+
+---
+
+### Task 3.2 — Freeze card action
+Add the ability to freeze and unfreeze the virtual card from the card page.
+
+**Steps:**
+- Extend card mock data/state with a freeze status (`active` / `frozen`)
+- Add a visible action on `app/card/page.tsx`:
+  - `Заморозить карту` when card is active
+  - `Разморозить карту` when card is frozen
+- Show the current card status near the card visual or action area
+- Update the card UI style when frozen:
+  - muted or dimmed visual state
+  - clear frozen badge / label
+- Prototype behavior can be client-side only (no persistent backend write required)
+
+**Definition of Done:**
+- [x] User can freeze the card from the card page
+- [x] User can unfreeze the card from the card page
+- [x] Current card status is clearly visible
+- [x] Frozen state is visually different from active state
+- [x] Freeze/unfreeze interaction works without page errors
+
+---
+
+### Task 3.3 — Recent transactions list
+Show recent card activity with an expandable list of transactions.
+
+**Steps:**
+- Add mock card transactions to the database seed or local prototype data
+- Create a transactions block on `app/card/page.tsx`
+- Show the latest 3 operations by default:
+  - merchant / operation name
+  - date or relative time
+  - amount
+- Add a `Еще` button below the first 3 operations
+- On click, expand the list and show the remaining operations
+- Keep the interaction lightweight and mobile-friendly
+
+**Definition of Done:**
+- [x] Card page shows the latest 3 operations by default
+- [x] Each operation displays name, date, and amount
+- [x] `Еще` button is visible when there are more than 3 operations
+- [x] Clicking `Еще` reveals the remaining operations
+- [x] Expanded transaction list keeps consistent spacing and styling
+
+---
+
+### Task 3.4 — Limits information action
+Add a way to view card limits and usage rules from the card page.
+
+**Steps:**
+- Add a dedicated info action such as `Лимиты` or `Информация`
+- On click, show a modal, sheet, or expandable info panel
+- Include useful limit details:
+  - daily / monthly payment limit
+  - online payments availability
+  - cash withdrawal availability if relevant
+  - any prototype restrictions
+- Keep the component easy to reuse for future card settings/help flows
+
+**Definition of Done:**
+- [x] Card page has a visible limits/info action
+- [x] Clicking the action reveals limits information
+- [x] Limits block includes at least 3 concrete usage rules or limits
+- [x] Limits information is readable on mobile
+- [x] Open/close interaction works without layout glitches
 
 ---
 

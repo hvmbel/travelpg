@@ -1,6 +1,7 @@
 import db from "./index";
 import {
   type Banner,
+  type CardTransaction,
   type EsimPlan,
   type StoreCategory,
   type StoreProduct,
@@ -35,6 +36,12 @@ export function getPlansByCountry(countryCode: string): EsimPlan[] {
 
 export function getUserCard(userId: number): UserCard | undefined {
   return db.prepare("SELECT * FROM user_cards WHERE user_id = ?").get(userId) as UserCard | undefined;
+}
+
+export function getCardTransactions(userCardId: number): CardTransaction[] {
+  return db
+    .prepare("SELECT * FROM card_transactions WHERE user_card_id = ? ORDER BY occurred_at DESC")
+    .all(userCardId) as CardTransaction[];
 }
 
 export function getUserSubscriptions(userId: number): UserSubscription[] {

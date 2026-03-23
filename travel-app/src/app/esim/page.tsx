@@ -1,3 +1,4 @@
+import { EsimActions } from "@/components/esim/EsimActions";
 import { CountryGrid, type CountryGridItem } from "@/components/esim/CountryGrid";
 import { TrafficMonitor } from "@/components/esim/TrafficMonitor";
 import type { UserEsimWithPlan } from "@/lib/types";
@@ -69,6 +70,7 @@ export default function EsimPage() {
     <section className="space-y-4 py-2">
       <h1 className="text-2xl font-semibold text-text-primary">eSIM</h1>
       <TrafficMonitor esim={activeEsim} />
+      <EsimActions esim={activeEsim} />
       <CountryGrid countries={countries} />
     </section>
   );

@@ -22,8 +22,11 @@ function formatRub(price: number): string {
 
 export function CountryGrid({ countries }: CountryGridProps) {
   return (
-    <section className="space-y-3" aria-label="Список стран eSIM">
-      <h2 className="text-lg font-semibold text-text-primary">Купить eSIM</h2>
+    <section id="new-esim" className="space-y-3 scroll-mt-24" aria-label="Список стран для новой eSIM">
+      <div className="space-y-1">
+        <h2 className="text-lg font-semibold text-text-primary">Новая eSIM</h2>
+        <p className="text-sm text-text-secondary">Выберите страну и оформите отдельный пакет</p>
+      </div>
 
       <div className="grid grid-cols-2 gap-3">
         {countries.map((country) => (
